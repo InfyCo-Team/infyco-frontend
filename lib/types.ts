@@ -1,6 +1,29 @@
-// types.ts
+// EventType Definition
+export type EventType = "all" | "internship" | "course" | "guest-lecture" | "hackathon";
 
-// Mentor Type Definition
+// Event Interface
+export interface Event {
+  id: number;
+  type: Exclude<EventType, "all">;
+  title: string;
+  organizer: string;
+  date: string;
+  location: string;
+  description: string;
+  link: string;
+  participants: number | null;
+  image: string;
+  deadline?: string;
+  stipend?: string;
+  duration?: string;
+  price?: string;
+  speaker?: string;
+  speakerRole?: string;
+  prizes?: string[];
+  teamSize?: string;
+}
+
+// Mentor Interface
 export interface Mentor {
   id: number;
   name: string;
@@ -55,4 +78,30 @@ export interface Resource {
   type: "video" | "article";
   url: string;
   description: string;
+}
+
+// PeerStatus Type Definition
+export type PeerStatus = "online" | "offline" | "busy";
+
+// ChatMessage Interface
+export interface ChatMessage {
+  id: string;
+  senderId: number;
+  content: string;
+  timestamp: Date;
+  type: "text" | "system";
+}
+
+// StudyGroup Interface
+export interface StudyGroup {
+  id: string;
+  name: string;
+  description: string;
+  topic: string;
+  members: number[];
+  createdBy: number;
+  createdAt: Date;
+  messages: ChatMessage[];
+  maxMembers: number;
+  isPublic: boolean;
 }
