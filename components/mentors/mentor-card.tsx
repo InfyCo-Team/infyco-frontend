@@ -12,9 +12,10 @@ import Link from "next/link";
 
 interface MentorCardProps {
   mentor: Mentor;
+  onConnect?: () => void; // Added the onConnect prop here
 }
 
-export function MentorCard({ mentor }: MentorCardProps) {
+export function MentorCard({ mentor, onConnect }: MentorCardProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
 
@@ -89,7 +90,7 @@ export function MentorCard({ mentor }: MentorCardProps) {
 
           <Button
             className="w-full mt-4"
-            onClick={() => setShowProfile(true)}
+            onClick={onConnect} // Using the onConnect function passed as prop
           >
             <span className="text-white">View Details & Connect</span>
           </Button>
