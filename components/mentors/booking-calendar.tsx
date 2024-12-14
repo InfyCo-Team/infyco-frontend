@@ -19,8 +19,8 @@ interface MentorProfileProps {
 
 export function MentorProfile({ mentor, isOpen, onClose }: MentorProfileProps) {
   const [bookingStep, setBookingStep] = useState<"calendar" | "payment">("calendar");
-  const [selectedDate, setSelectedDate] = useState<Date>();
-  const [selectedTime, setSelectedTime] = useState<string>();
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
   const handleBookingComplete = () => {
     if (bookingStep === "calendar" && selectedDate && selectedTime) {
@@ -175,7 +175,7 @@ export function MentorProfile({ mentor, isOpen, onClose }: MentorProfileProps) {
                 selectedDate={selectedDate}
                 selectedTime={selectedTime}
                 onDateSelect={setSelectedDate}
-                onTimeSelect={(timeString: string) => setSelectedTime(timeString)}  {/* Fixed */}
+                onTimeSelect={setSelectedTime}
                 onProceed={handleBookingComplete}
               />
             ) : (
