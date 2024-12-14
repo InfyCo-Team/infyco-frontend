@@ -35,7 +35,7 @@ export function BookingCalendar({
     if (!selectedDate) return [];
     
     const [startTime, endTime] = mentor.availability[1].split(" - ");
-    const times = [];
+    const times: string[] = [];
     let current = parse(startTime, "h:mm a", new Date());
     const end = parse(endTime, "h:mm a", new Date());
 
@@ -57,7 +57,10 @@ export function BookingCalendar({
           <Calendar
             mode="single"
             selected={selectedDate}
-            onSelect={onDateSelect}
+            onSelect={(date: Date | undefined) => {
+              // Ensure the selected date is not undefined
+              if (date) onDateSelect(date);
+            }}
             className="rounded-md border"
             disabled={(date) => {
               const day = format(date, "E").toLowerCase();
