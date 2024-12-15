@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { BookingCalendar } from "@/components/mentors/booking-calendar";
+import { BookingCalendar } from "@/components/mentors/booking-calendar"; // Ensure no circular dependency
 import { PaymentForm } from "@/components/mentors/payment-form";
 import { Globe, Linkedin, Mail, Star } from "lucide-react";
 import type { Mentor } from "@/lib/types";
@@ -26,7 +26,6 @@ export function MentorProfile({ mentor, isOpen, onClose }: MentorProfileProps) {
     if (bookingStep === "calendar" && selectedDate && selectedTime) {
       setBookingStep("payment");
     } else {
-      // Handle payment completion
       onClose();
       setBookingStep("calendar");
     }
@@ -40,7 +39,6 @@ export function MentorProfile({ mentor, isOpen, onClose }: MentorProfileProps) {
         </DialogHeader>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Left Column - Profile Info */}
           <div className="md:col-span-2">
             <Tabs defaultValue="about">
               <TabsList>
@@ -167,7 +165,6 @@ export function MentorProfile({ mentor, isOpen, onClose }: MentorProfileProps) {
             </Tabs>
           </div>
 
-          {/* Right Column - Booking */}
           <div>
             {bookingStep === "calendar" ? (
               <BookingCalendar
