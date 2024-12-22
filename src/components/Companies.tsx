@@ -13,7 +13,7 @@ export const Companies = () => {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {companies.map((company) => (
-            <div key={company} className="company-card p-4 rounded-lg flex items-center justify-center">
+            <div key={company} className="company-card p-4 rounded-2xl flex items-center justify-center">
               <span className="text-gray-400 font-medium">{company}</span>
             </div>
           ))}

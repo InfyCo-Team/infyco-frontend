@@ -10,7 +10,7 @@ export const Hero = () => {
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
           Get personalized mentorship from industry experts and accelerate your career growth
         </p>
-        <Button size="lg" className="bg-primary hover:bg-primary/90">
+        <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full">
           Book Free Session →
         </Button>
       </div>

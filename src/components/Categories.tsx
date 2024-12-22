@@ -60,7 +60,7 @@ export const Categories = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
-            <div key={category.title} className="category-card rounded-lg p-6">
+            <div key={category.title} className="category-card rounded-2xl p-6 hover:scale-105 transition-all duration-300">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <category.icon className="w-6 h-6 text-primary" />
               </div>
@@ -68,7 +68,7 @@ export const Categories = () => {
               <p className="text-gray-400 text-sm mb-4">{category.description}</p>
               <div className="flex flex-wrap gap-2">
                 {category.tags.map((tag) => (
-                  <span key={tag} className="text-xs bg-secondary px-2 py-1 rounded-full text-gray-400">
+                  <span key={tag} className="text-xs bg-secondary px-3 py-1.5 rounded-full text-gray-400">
                     {tag}
                   </span>
                 ))}

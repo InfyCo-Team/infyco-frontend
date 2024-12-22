@@ -13,7 +13,7 @@ export const Header = () => {
           <Link to="/events" className="text-sm text-gray-300 hover:text-white transition-colors">Events</Link>
         </nav>
 
-        <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
+        <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90 rounded-full">
           Sign up
         </Button>
       </div>
