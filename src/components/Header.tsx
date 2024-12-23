@@ -22,7 +22,7 @@ export const Header = () => {
         <Button 
           variant="default" 
           size="sm" 
-          className="bg-primary hover:bg-primary/90 rounded-md"
+          className="bg-primary hover:bg-primary/90 rounded-sm"
           onClick={handleSignUpClick}
         >
           Sign up
