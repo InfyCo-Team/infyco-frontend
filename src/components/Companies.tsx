@@ -37,18 +37,6 @@ export const Companies = () => {
       logo: "/lovable-uploads/logos/uber.svg",
       mentorCount: 9,
       description: "Transportation & delivery platform"
-    },
-    {
-      name: "Google",
-      logo: "/lovable-uploads/logos/airbnb.svg", // Using placeholder logo
-      mentorCount: 18,
-      description: "Search & cloud technology giant"
-    },
-    {
-      name: "Apple",
-      logo: "/lovable-uploads/logos/amazon.svg", // Using placeholder logo
-      mentorCount: 14,
-      description: "Consumer technology innovator"
     }
   ];
 
@@ -62,7 +50,7 @@ export const Companies = () => {
           Connect with experienced mentors from world-class technology companies
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {companies.map((company) => (
             <Link
               key={company.name}
