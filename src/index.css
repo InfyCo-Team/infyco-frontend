@@ -42,14 +42,14 @@
 .company-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid #f3f3f3;
+  border: 1px solid hsl(var(--primary));
 }
 
 .category-card {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  border: 1px solid #f3f3f3;
+  border: 1px solid hsl(var(--primary));
 }
 
 .category-card:hover {
